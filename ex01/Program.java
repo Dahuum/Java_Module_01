@@ -1,23 +1,11 @@
 public class Program {
-    public static void main (String [] args) {
-        User Sender = new User("Abdurrahman", 0);
-        User Recipient = new User("Ismail", 5000);
-        
-        System.out.println("Sender: " + Sender.getName() + " " + ", Balance: " + Sender.getBalance());
-        System.out.println("Recipient: " + Recipient.getName() + " " + ", Balance: " + Recipient.getBalance());
-        System.out.println();       
-        try {
-            Transaction T1 = new Transaction(Recipient, Sender, Transaction.TransferCategory.OUTCOME , -200); 
-            System.out.println(); 
-            System.out.println("Sender: " + Sender.getName() + " " + ", Balance: " + Sender.getBalance());
-            System.out.println("Recipient: " + Recipient.getName() + " " + ", Balance: " + Recipient.getBalance());
-            Transaction T2 = new Transaction(Sender, Recipient, Transaction.TransferCategory.INCOME  ,  200);
-            
-            System.out.println(); 
-            System.out.println("Sender: " + Sender.getName() + " " + ", Balance: " + Sender.getBalance());
-            System.out.println("Recipient: " + Recipient.getName() + " " + ", Balance: " + Recipient.getBalance());
-        } catch (IllegalArgumentException e) {
-            System.err.println(e.getMessage());        
-        }
+    public static void main(String[] args) {
+        User u1 = new User("John", 100);
+        User u2 = new User("Mike", 200);
+        User u3 = new User("Alice", 300);
+
+        System.out.println(u1.getName() + " has ID " + u1.getId());
+        System.out.println(u2.getName() + " has ID " + u2.getId());
+        System.out.println(u3.getName() + " has ID " + u3.getId());
     }
 }

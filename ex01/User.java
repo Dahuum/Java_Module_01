@@ -1,14 +1,13 @@
 public class User {
-    private static int idCounter = 1;
     
-    private int Id;
+    private final int Id;
     private String Name;
     private int Balance;
     
     public User(String Name, int Balance) {
         this.Name = Name;
         this.Balance = Balance < 0 ? 0 : Balance;
-        this.Id = idCounter++;
+        this.Id = UserIdsGenerator.getInstance().generateId();
     }
     
     public int getId() {
